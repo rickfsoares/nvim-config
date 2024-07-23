@@ -41,6 +41,12 @@ return {
         }
     },
 
+    {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" }
+    },
+
     ------- LSP
     "williamboman/mason.nvim",           -- LSP packet manager
     "williamboman/mason-lspconfig.nvim", -- lspconfig integration

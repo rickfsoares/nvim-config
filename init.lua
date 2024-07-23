@@ -25,3 +25,4 @@ require("plugins.mason")            -- Mason LSP & DAP servers
 require("plugins.nvim-cmp")         -- Autocompletion
 require("plugins.treesitter")       -- Treesitter syntax highlighting
 require("plugins.dap")              -- Debug Adapter Protocol
+require("plugins.harpoon")          -- Harpoon setup
