@@ -17,7 +17,7 @@ opt.cursorline = true
 opt.shiftwidth = 4
 
 -- Tab width
-opt.tabstop = 2
+opt.tabstop = 4
 
 -- Space characters instead of tabs
 opt.expandtab = true
