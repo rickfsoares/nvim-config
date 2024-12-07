@@ -19,7 +19,6 @@ require("mason-lspconfig").setup({
         "rust_analyzer",
         "sqlls",
         "taplo",
-        "tsserver",
         "yamlls",
     },
     automatic_installation = true,

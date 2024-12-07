@@ -27,3 +27,4 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 -- Show errors
 vim.keymap.set('n', '<leader>err',function() vim.diagnostic.open_float(0, {scope="line"}) end)
+
