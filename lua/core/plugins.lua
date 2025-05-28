@@ -52,6 +52,16 @@ return {
     "williamboman/mason-lspconfig.nvim", -- lspconfig integration
     "neovim/nvim-lspconfig",             -- LSP configuration
 
+    ------- NVIM-JAVA
+    {
+        "nvim-java/nvim-java",
+        config = function ()
+            require('java').setup()
+            require('lspconfig').jdtls.setup({})
+        end
+
+    },
+
     ------- Debugging
     {
         "rcarriga/nvim-dap-ui", -- Debugger
