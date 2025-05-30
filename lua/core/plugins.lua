@@ -51,6 +51,7 @@ return {
     "williamboman/mason.nvim",           -- LSP packet manager
     "williamboman/mason-lspconfig.nvim", -- lspconfig integration
     "neovim/nvim-lspconfig",             -- LSP configuration
+    "mfussenegger/nvim-jdtls",            -- LSP for JAVA
 
     ------- Debugging
     {
