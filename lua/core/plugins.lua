@@ -21,8 +21,9 @@ return {
     },
     {
         "hrsh7th/nvim-cmp", -- Auto completion
+        lazy = false,
         dependencies = {
-            "hrsh7th/cmp-nvim-lsp",
+            {"hrsh7th/cmp-nvim-lsp", lazy = false},
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-cmdline",
@@ -48,9 +49,17 @@ return {
     },
 
     ------- LSP
-    "williamboman/mason.nvim",           -- LSP packet manager
-    "williamboman/mason-lspconfig.nvim", -- lspconfig integration
-    "neovim/nvim-lspconfig",             -- LSP configuration
+    "mason-org/mason.nvim",           -- LSP packet manager
+    {
+        "mason-org/mason-lspconfig.nvim",
+        lazy = false,
+        opts = {},
+        dependencies = { 
+            { "mason-org/mason.nvim", opts = {} },
+            "neovim/nvim-lspconfig",
+        }
+    },                                   -- lspconfig integration
+    {"neovim/nvim-lspconfig", lazy = false},             -- LSP configuration
     "mfussenegger/nvim-jdtls",            -- LSP for JAVA
 
     ------- Debugging
