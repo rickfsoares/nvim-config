@@ -12,9 +12,9 @@ require("mason-lspconfig").setup({
         "dotls",
         "gopls",
         "eslint",
+        "jdtls",
         "html",
         "jsonls",
-        "jdtls",
         "lua_ls",
         "marksman",
         "rust_analyzer",
@@ -24,6 +24,10 @@ require("mason-lspconfig").setup({
     },
     automatic_installation = true,
 })
+
+-- Variáveis para automatizar caminhos do JDTLS
+local jdtls_base = vim.fn.expand("~/.local/share/nvim/mason/packages/jdtls")
+local launcher_jar = vim.fn.glob(jdtls_base .. "/plugins/org.eclipse.equinox.launcher_*.jar")
 
 local on_attach_global = function(client, bufnr)
     -- Enable completion triggered by <c-x><c-o>
@@ -97,7 +101,7 @@ lspconfig.jdtls.setup({
         '--add-modules=ALL-SYSTEM',
         '--add-opens', 'java.base/java.util=ALL-UNNAMED',
         '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-        '-jar', '/home/ricardo/.local/share/nvim/mason/share/jdtls/plugins/org.eclipse.equinox.launcher_1.7.0.v20250331-1702.jar',
+        '-jar', launcher_jar,
         '-javaagent:/home/ricardo/.local/share/nvim/mason/packages/jdtls/lombok.jar',
         '-configuration', '/home/ricardo/.local/share/nvim/mason/packages/jdtls/config_linux',
         '-data', '/home/ricardo/.local/share/jdtls-workspace'
@@ -108,7 +112,6 @@ lspconfig.jdtls.setup({
             configuration = {
                 runtimes = {
                     { name = "JavaSE-21", path = "/usr/lib/jvm/java-21-openjdk/", default = true },
-                    { name = "JavaSE-24", path = "/usr/lib/jvm/java-24-openjdk/" },
                 },
             },
             project = {
